@@ -31,9 +31,14 @@ function addCheckDigit(zipcodeArray) {
 }
 
 //#6-4
-function matchBarcode(zipcodeArrayWithCheckDigit,allCodes) {
+function matchBarcode(zipcodeArrayWithCheckDigit, allCodes) {
     //debugger;
     return zipcodeArrayWithCheckDigit.map(zipcodeItem => allCodes.find(code =>code.key === zipcodeItem).digit);
 }
 
 //#7
+function buildBarcode(barcodeArray) {
+    //debugger;
+    return '|' + _.sum(barcodeArray) + '|';
+
+}

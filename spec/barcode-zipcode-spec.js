@@ -10,7 +10,7 @@ describe('postnet', function () {
         expect(checkedBarcode).toEqual(expected);
     });
 
-    it('#2－1.formatBarcode', () => {
+    it('#2-1.formatBarcode', () => {
         let checkedBarcode = {
             barcode: '|:::||::|:|::||::|::|:|:|:::|:|::||::|::|:|:|::::|||',
             type: true

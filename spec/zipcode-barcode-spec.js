@@ -47,7 +47,7 @@ describe('zipcode-barcode', function () {
 
     it('#7.buildBarcode', () => {
         let barcodeArray = [':::||', '::|:|', '::||:', ':|::|', ':|:|:', ':|:|:'];
-        let barcode = buildBarcodeArray(barcodeArray);
+        let barcode = buildBarcode(barcodeArray);
         let expected = '|:::||::|:|::||::|::|:|:|::|:|:|';
         expect(barcode).toEqual(expected);
     })
