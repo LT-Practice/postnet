@@ -3,7 +3,10 @@ describe('barcode-zipcode', function () {
     it('#barcode to zipcode', () => {
         let barcode = '|:::||::|:|::||::|::|:|:|::|:|:|';
         let zipcode = barcodeToZipcode(barcode);
-        let expected = '12345';
+        let expected = {
+            zipcode:'12345',
+            type:true
+        };
         expect(zipcode).toEqual(expected);
     });
 

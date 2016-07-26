@@ -1,9 +1,12 @@
+// let _ = require('lodash');
+// var allCodes = require('./codes');
+
 //#zipcode to barcode 邮编 to 条码
 function zipcodeToBarcode(zipcode) {
     let checkedZipcode = checkZipcode(zipcode);
     let barcodeArray = zipcodeTransformToBarcode(checkedZipcode);
     let barcode = buildBarcode(barcodeArray);
-    return barcode;
+    return {barcode, type: checkedZipcode.type};
 }
 
 //#5
@@ -59,3 +62,15 @@ function buildBarcode(barcodeArray) {
     return '|' + _.sum(barcodeArray) + '|';
 
 }
+
+module.exports = zipcodeToBarcode;
+module.exports = {
+    zipcodeToBarcode: zipcodeToBarcode,
+    checkZipcode: checkZipcode,
+    zipcodeTransformToBarcode: zipcodeTransformToBarcode,
+    formatZipcode: formatZipcode,
+    buildZipcodeArray: buildZipcodeArray,
+    addCheckDigit:addCheckDigit,
+    matchBarcode:matchBarcode,
+    buildBarcode:buildBarcode
+};

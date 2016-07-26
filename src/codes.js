@@ -12,3 +12,4 @@ function loadAllCodes() {
         {key: '9', digit: '|:|::'}
     ];
 }
+module.exports = loadAllCodes;

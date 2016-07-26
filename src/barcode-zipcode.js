@@ -4,7 +4,7 @@ function barcodeToZipcode(barcode) {
     let zipcodeArray = barcodeTransformToZipcode(checkedBarcode);
     let recheckedZipcodeArray = recheckZipcodeArray(zipcodeArray);
     let zipcode = buildZipcode(recheckedZipcodeArray);
-    return zipcode;
+    return {zipcode,type:checkedBarcode.type};
 }
 
 //#1
