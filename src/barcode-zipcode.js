@@ -68,3 +68,4 @@ function buildZipcode(recheckedZipcodeArray) {
     return result;
 }
 
+// module.exports = barcodeToZipcode;

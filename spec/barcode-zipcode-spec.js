@@ -1,4 +1,5 @@
-describe('postnet', function () {
+// var barcodeToZipcode = require("../src/barcode-zipcode.js");
+describe('barcode-zipcode', function () {
     it('#barcode to zipcode', () => {
         let barcode = '|:::||::|:|::||::|::|:|:|::|:|:|';
         let zipcode = barcodeToZipcode(barcode);
