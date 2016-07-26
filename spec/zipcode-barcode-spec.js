@@ -1,6 +1,13 @@
 describe('zipcode-barcode', function () {
 
-    it('#5.checkZipcode', () => {
+    it('zipcode to barcode',() => {
+        let zipcode = '12345';
+        let barcode = zipcodeToBarcode(zipcode);
+        let expected = '|:::||::|:|::||::|::|:|:|::|:|:|';
+        expect(barcode).toEqual(expected);
+    });
+
+    it('#5.checkZipcode with 5-4 codes', () => {
         let zipcode = '45056-1234';
         let checkedZipcode = checkZipcode(zipcode);
         let expected = {
@@ -11,13 +18,44 @@ describe('zipcode-barcode', function () {
 
     });
 
-    it('#6-1.formatZipcode', () => {
+    it('#5.1.checkZipcode with 5 codes', () => {
+        let zipcode = '45056';
+        let checkedZipcode = checkZipcode(zipcode);
+        let expected = {
+            zipcode: '45056',
+            type: true
+        };
+        expect(checkedZipcode).toEqual(expected);
+
+    });
+    it('#6.zipcodeTransformToBarcode', () => {
+        let checkedZipcode = {
+            zipcode: '12345',
+            type: true
+        };
+        //let allCodes = loadAllCodes();
+        let barcodeArray = zipcodeTransformToBarcode(checkedZipcode);
+        let expected = [':::||', '::|:|', '::||:', ':|::|', ':|:|:', ':|:|:'];
+        expect(barcodeArray).toEqual(expected);
+    });
+
+    it('#6-1.formatZipcode with 5-4 codes', () => {
         let checkedZipcode = {
             zipcode: '45056-1234',
             type: true
         };
         let formattedZipcode = formatZipcode(checkedZipcode);
         let expected = '450561234';
+        expect(formattedZipcode).toEqual(expected);
+
+    });
+    it('#6-1.1.formatZipcode with 5 codes', () => {
+        let checkedZipcode = {
+            zipcode: '45056',
+            type: true
+        };
+        let formattedZipcode = formatZipcode(checkedZipcode);
+        let expected = '45056';
         expect(formattedZipcode).toEqual(expected);
 
     });

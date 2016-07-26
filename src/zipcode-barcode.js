@@ -1,3 +1,11 @@
+//#zipcode to barcode 邮编 to 条码
+function zipcodeToBarcode(zipcode) {
+    let checkedZipcode = checkZipcode(zipcode);
+    let barcodeArray = zipcodeTransformToBarcode(checkedZipcode);
+    let barcode = buildBarcode(barcodeArray);
+    return barcode;
+}
+
 //#5
 function checkZipcode(zipcode) {
     //debugger;
@@ -9,7 +17,16 @@ function checkZipcode(zipcode) {
     }
 }
 
-
+//#6
+function zipcodeTransformToBarcode(checkedZipcode) {
+    debugger;
+    let formattedZipcode = formatZipcode(checkedZipcode);
+    let zipcodeArray = buildZipcodeArray(formattedZipcode);
+    let zipcodeArrayWithCheckDigit = addCheckDigit(zipcodeArray);
+    let allCodes = loadAllCodes();
+    let barcodeArray = matchBarcode(zipcodeArrayWithCheckDigit, allCodes);
+    return barcodeArray;
+}
 //#6-1
 function formatZipcode(checkedZipcode) {
     return checkedZipcode.zipcode.replace(/-/g, '');

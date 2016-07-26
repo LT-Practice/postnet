@@ -1,3 +1,12 @@
+//barcode to zipcode条码 to 邮编
+function barcodeToZipcode(barcode) {
+    let checkedBarcode = checkBarcode(barcode);
+    let zipcodeArray = barcodeTransformToZipcode(checkedBarcode);
+    let recheckedZipcodeArray = recheckZipcodeArray(zipcodeArray);
+    let zipcode = buildZipcode(recheckedZipcodeArray);
+    return zipcode;
+}
+
 //#1
 function checkBarcode(barcode) {
     let barcodeElementArray = barcode.split('');
@@ -7,6 +16,15 @@ function checkBarcode(barcode) {
     && (barcodesLength === 6 || barcodesLength === 10));
     return {barcode, type};
 }
+//#2
+function barcodeTransformToZipcode(checkedBarcode) {
+    let formattedBarcode = formatBarcode(checkedBarcode);
+    let barcodeArray = buildBarcodeArray(formattedBarcode);
+    let allCodes = loadAllCodes();
+    let zipcodeArray = matchZipcode(barcodeArray, allCodes);
+    return zipcodeArray;
+}
+
 
 //#2-1
 function formatBarcode(checkedBarcode) {
@@ -15,7 +33,7 @@ function formatBarcode(checkedBarcode) {
 
 //#2-2
 function buildBarcodeArray(formattedBarcode) {
-    debugger;
+    //debugger;
     let barcodeArray = [];
     for (let index = 0; index < formattedBarcode.length - 1; index += 5) {
         barcodeArray.push(formattedBarcode.substr(index, 5));
@@ -41,11 +59,12 @@ function recheckZipcodeArray(zipcodeArray) {
 }
 //#4
 function buildZipcode(recheckedZipcodeArray) {
-    //debugger;
-    let resultSum = _.sum(recheckedZipcodeArray);
+    debugger;
+    let resultSum = _.sum(recheckedZipcodeArray.zipcodeArray);
     let result = resultSum.substr(0, resultSum.length - 1);
     if (result.length != 5) {
         return result.substr(0, 5) + '-' + result.substr(5);
     }
     return result;
 }
+
