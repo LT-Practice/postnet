@@ -4,7 +4,6 @@ describe('route-spec', () => {
     beforeEach(() => {
         route.reset();
     });
-    //input = main
     it('start', () => {
         let response = route('main');
         let expected = `
