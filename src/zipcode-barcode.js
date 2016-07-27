@@ -52,7 +52,7 @@ function addCheckDigit(zipcodeArray) {
 
 //#6-4
 function matchBarcode(zipcodeArrayWithCheckDigit, allCodes) {
-    //debugger;
+    // debugger;
     return zipcodeArrayWithCheckDigit.map(zipcodeItem => allCodes.find(code =>code.key === zipcodeItem).digit);
 }
 

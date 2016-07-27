@@ -13,8 +13,7 @@ Please input your choices(1~3)`;
 function goToZipToBarcodePage() {
     return {
         text: `Please input zip code:`,
-        reset: false,
-        next: transformZipToBarcodeCommand
+        newMapping: {'*':transformZipToBarcodeCommand}
     };
 }
 
@@ -26,14 +25,12 @@ function transformZipToBarcodeCommand(zipcode) {
     if (coreResponse.type) {
         return {
             text: coreResponse.barcode,
-            next: null,
             reset: true
         };
     } else {
         return {
             text: 'Please give right input',
             next: goToZipToBarcodePage,
-            reset: false
         }
     }
 }
@@ -42,8 +39,7 @@ function transformZipToBarcodeCommand(zipcode) {
 function goToBarToZipcodePage() {
     return {
         text: `Please input bar code:`,
-        reset: false,
-        next: transformZipToBarcodeCommand
+        newMapping: {'*':transformZipToBarcodeCommand}
     };
 
 }
@@ -54,7 +50,6 @@ function transformBarToZipcodeCommand(barcode) {
     if (coreResponse.type) {
         return {
             text: coreResponse.zipcode,
-            next: null,
             reset: true
         };
     } else {
@@ -70,7 +65,6 @@ function transformBarToZipcodeCommand(barcode) {
 function quite() {
     return {
         text: 'Thanks for using.',
-        next: null,
         reset: true
     };
 }

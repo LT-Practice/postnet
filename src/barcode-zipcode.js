@@ -62,7 +62,7 @@ function recheckZipcodeArray(zipcodeArray) {
 }
 //#4
 function buildZipcode(recheckedZipcodeArray) {
-    debugger;
+    // debugger;
     let resultSum = _.sum(recheckedZipcodeArray.zipcodeArray);
     let result = resultSum.substr(0, resultSum.length - 1);
     if (result.length != 5) {
