@@ -4,7 +4,9 @@ describe('route-spec', () => {
     beforeEach(() => {
         route.reset();
     });
-    it('start', () => {
+
+
+    it('#1.start', () => {
         let response = route('main');
         let expected = `
 1. Translate zip code to bar code
@@ -15,13 +17,13 @@ Please input your choices(1~3)`;
     });
 
 
-    it('input 1 goToZipToBarcodePage', () => {
+    it('#2.input 1 goToZipToBarcodePage', () => {
         let response = route('1');
         let expected = `Please input zip code:`;
         expect(response).toEqual(expected);
     });
 
-    it('input 12345 to trnsformZipToBarcodeCommand right', () => {
+    it('#3.input a right zipcode to trnsformZipToBarcodeCommand', () => {
         route('1');
         let response = route('12345');
         let expected = '|:::||::|:|::||::|::|:|:|::|:|:|';
@@ -29,7 +31,7 @@ Please input your choices(1~3)`;
         expect(response).toEqual(expected);
     });
 
-    it('input 1234 to transformZipToBarcodeCommand wrong', () => {
+    it('#4.input a wrong zipcode transformZipToBarcodeCommand', () => {
         route('1');
         let response = route('1234');
         let expected = 'Please give right input:\nPlease input zip code:';
@@ -37,50 +39,35 @@ Please input your choices(1~3)`;
     });
 
 
-    it('input 2 goToBarToZipcodePage', () => {
+    it('#5.input 2 goToBarToZipcodePage', () => {
         let response = route('2');
         let expected = `Please input bar code:`;
         expect(response).toEqual(expected);
     });
 
-    it('input a right barcode', () => {
+    it('#6.input a right barcode', () => {
         route('2');
         let response = route('|:::||::|:|::||::|::|:|:|::|:|:|');
         let expected = '12345';
         expect(response).toEqual(expected);
     });
 
-    it('input zipcode to transformZipToBarcodeCommand wrong', () => {
+    it('#7.input a wrong barcode to transformZipToBarcodeCommand ', () => {
         route('2');
         let response = route('|:::||::|:|::||::|::|:|:|::');
         let expected = 'Please give right input:\nPlease input bar code:';
         expect(response).toEqual(expected);
     });
 
-    it('input other', () => {
+    it('#8.input other', () => {
         let response = route('6');
         let expected = 'no command Please give right input:';
         expect(response).toEqual(expected);
     });
 
-    it('quit', () => {
+    it('#9.quit', () => {
         let response = route('3');
         let expected = 'Thanks for using';
-        expect(response).toEqual(expected);
-    });
-
-    it('input 12345 to trnsformZipToBarcodeCommand right', () => {
-        route('2');
-        let response = route('|:::||::|:|::||::|::|:|:|::|:|:|');
-        let expected = '12345';
-
-        expect(response).toEqual(expected);
-    });
-
-    it('input 3 goToZipToBarcodePage', () => {
-        let response = route('3');
-        let expected = 'Thanks for using';
-
         expect(response).toEqual(expected);
     });
 
