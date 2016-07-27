@@ -1,8 +1,10 @@
-// var barcodeToZipcode = require("../src/barcode-zipcode.js");
+var barcodeToZipcode = require("../src/barcode-zipcode");
+var allCodes = require('../src/codes');
+
 describe('barcode-zipcode', function () {
     it('#barcode to zipcode', () => {
         let barcode = '|:::||::|:|::||::|::|:|:|::|:|:|';
-        let zipcode = barcodeToZipcode(barcode);
+        let zipcode = barcodeToZipcode.barcodeToZipcode(barcode);
         let expected = {
             zipcode:'12345',
             type:true
@@ -12,7 +14,7 @@ describe('barcode-zipcode', function () {
 
     it('#1.checkBarcode with 10 codes', () => {
         let barcode = '|:::||::|:|::||::|::|:|:|:::|:|::||::|::|:|:|::::|||';
-        let checkedBarcode = checkBarcode(barcode);
+        let checkedBarcode = barcodeToZipcode.checkBarcode(barcode);
         let expected = {
             barcode: '|:::||::|:|::||::|::|:|:|:::|:|::||::|::|:|:|::::|||',
             type: true
@@ -21,7 +23,7 @@ describe('barcode-zipcode', function () {
     });
     it('#1.1 checkBarcode with 6 codes', () => {
         let barcode = '||:|:::|:|:|:::|:::||::||::|:|:|';
-        let checkedBarcode = checkBarcode(barcode);
+        let checkedBarcode = barcodeToZipcode.checkBarcode(barcode);
         let expected = {
             barcode: '||:|:::|:|:|:::|:::||::||::|:|:|',
             type: true
@@ -34,7 +36,7 @@ describe('barcode-zipcode', function () {
             type: true
         };
         //let allCodes = loadAllCodes();
-        let zipcodeArray = barcodeTransformToZipcode(checkedBarcode);
+        let zipcodeArray = barcodeToZipcode.barcodeTransformToZipcode(checkedBarcode);
         let expected = ['1', '2', '3', '4', '5', '5'];//[1, 2, 3, 4, 5, 5];
         expect(zipcodeArray).toEqual(expected);
     });
@@ -45,29 +47,29 @@ describe('barcode-zipcode', function () {
             type: true
 
         };
-        let formattedBarcode = formatBarcode(checkedBarcode);
+        let formattedBarcode = barcodeToZipcode.formatBarcode(checkedBarcode);
         let expected = ':::||::|:|::||::|::|:|:|:::|:|::||::|::|:|:|::::||';
         expect(formattedBarcode).toEqual(expected);
     });
 
     it('#2-2.buildBarcodeArray', () => {
         let formattedBarcode = ':::||::|:|::||::|::|:|:|:::|:|::||::|::|:|:|::::||';
-        let barcodeArray = buildBarcodeArray(formattedBarcode);
+        let barcodeArray =barcodeToZipcode.buildBarcodeArray(formattedBarcode);
         let expected = [':::||', '::|:|', '::||:', ':|::|', ':|:|:', '::|:|', '::||:', ':|::|', ':|:|:', ':::||'];
         expect(barcodeArray).toEqual(expected);
     });
 
     it('#2-3.matchZipcode', () => {
         let barcodeArray = [':::||', '::|:|', '::||:', ':|::|', ':|:|:', ':|:|:'];
-        let allCodes = loadAllCodes();
-        let zipcodeArray = matchZipcode(barcodeArray, allCodes);
+        // let allCodes = loadAllCodes();
+        let zipcodeArray = barcodeToZipcode.matchZipcode(barcodeArray, allCodes());
         let expected = ['1', '2', '3', '4', '5', '5'];
         expect(zipcodeArray).toEqual(expected);
     });
 
     it('#3.recheckZipcodeArray', () => {
         let zipcodeArray = ['1', '2', '3', '4', '5', '5'];//[1, 2, 3, 4, 5, 5];
-        let recheckedZipcodeArray = recheckZipcodeArray(zipcodeArray);
+        let recheckedZipcodeArray = barcodeToZipcode.recheckZipcodeArray(zipcodeArray);
         let expected = {
             zipcodeArray: ['1', '2', '3', '4', '5', '5'],//[1, 2, 3, 4, 5, 5],
             recheckType: true
@@ -79,7 +81,7 @@ describe('barcode-zipcode', function () {
             zipcodeArray: ['1', '2', '3', '4', '5', '5', '5', '5', '5', '5'],
             recheckType: true
         };
-        let zipcode = buildZipcode(recheckedZipcodeArray);
+        let zipcode = barcodeToZipcode.buildZipcode(recheckedZipcodeArray);
         let expected = '12345-5555';
         expect(zipcode).toEqual(expected);
     });
@@ -89,7 +91,7 @@ describe('barcode-zipcode', function () {
             zipcodeArray: ['1', '2', '3', '4', '5', '5'],
             recheckType: true
         };
-        let zipcode = buildZipcode(recheckedZipcodeArray);
+        let zipcode = barcodeToZipcode.buildZipcode(recheckedZipcodeArray);
         let expected = '12345';
         expect(zipcode).toEqual(expected);
     })

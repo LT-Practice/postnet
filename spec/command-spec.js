@@ -1,3 +1,4 @@
+let command = require('../src/command');
 describe('command-spec', function () {
     it('mainCommand', () => {
 
@@ -6,7 +7,7 @@ describe('command-spec', function () {
 2. Translate ar code to zip code
 3. Quitb
 Please input your choices(1~3)`;
-        expect(mainCommand()).toEqual(expected);
+        expect(command.mainCommand()).toEqual(expected);
     });
 
 
@@ -14,15 +15,15 @@ Please input your choices(1~3)`;
         let expected = {
             text: `Please input zip code:`,
             reset: false,
-            next: transformZipToBarcodeCommand
+            next: command.transformZipToBarcodeCommand
         };
-        expect(goToZipToBarcodePage()).toEqual(expected);
+        expect(command.goToZipToBarcodePage()).toEqual(expected);
     });
 
 
     it('#1.right input', () => {
         let zipcode = '12345';
-        let result = transformZipToBarcodeCommand(zipcode);
+        let result = command.transformZipToBarcodeCommand(zipcode);
         let expected = {
             text: '|:::||::|:|::||::|::|:|:|::|:|:|',
             next: null,
@@ -34,10 +35,10 @@ Please input your choices(1~3)`;
 
     it('#1.wrong input', () => {
         let zipcode = '2345';
-        let result = transformZipToBarcodeCommand(zipcode);
+        let result = command.transformZipToBarcodeCommand(zipcode);
         let expected = {
             text: 'Please give right input',
-            next: goToZipToBarcodePage,
+            next: command.goToZipToBarcodePage,
             reset: false
         };
         expect(result).toEqual(expected);
@@ -47,14 +48,14 @@ Please input your choices(1~3)`;
         let expected = {
             text: `Please input bar code:`,
             reset: false,
-            next: transformZipToBarcodeCommand
+            next: command.transformZipToBarcodeCommand
         };
-        expect(goToBarToZipcodePage()).toEqual(expected);
+        expect(command.goToBarToZipcodePage()).toEqual(expected);
     });
 
     it('#2.right input', () => {
         let barcode = '|:::||::|:|::||::|::|:|:|::|:|:|';
-        let result = transformBarToZipcodeCommand(barcode);
+        let result = command.transformBarToZipcodeCommand(barcode);
         let expected = {
             text: '12345',
             next: null,
@@ -65,10 +66,10 @@ Please input your choices(1~3)`;
 
     it('#2.wrong input', () => {
         let barcode = '|::|:|::||::|::|:|:|::|:|:|';
-        let result = transformBarToZipcodeCommand(barcode);
+        let result = command.transformBarToZipcodeCommand(barcode);
         let expected = {
             text: 'Please give right input',
-            next: goToBarToZipcodePage,
+            next: command.goToBarToZipcodePage,
             reset: true
         };
         expect(result).toEqual(expected);
@@ -80,16 +81,16 @@ Please input your choices(1~3)`;
             next: null,
             reset: true
         };
-        expect(quite()).toEqual(expected);
+        expect(command.quite()).toEqual(expected);
     })
 
     it('#other input', () => {
         let expected = {
             text: 'Please give right input',
-            next: mainCommand,
+            next: command.mainCommand,
             reset: true
         };
-        expect(otherInput()).toEqual(expected);
+        expect(command.otherInput()).toEqual(expected);
     });
 });
 

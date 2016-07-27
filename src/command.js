@@ -1,4 +1,5 @@
-// let translate = require('zipcode-barcode.js');
+let zipcodeTranslateBarcode = require('./zipcode-barcode');
+let barcodeTranslateZipcode = require('./barcode-zipcode');
 //mainCommand
 function mainCommand() {
     return `
@@ -19,7 +20,7 @@ function goToZipToBarcodePage() {
 
 //#1.输入正确 & 输入错误
 function transformZipToBarcodeCommand(zipcode) {
-    let coreResponse = zipcodeToBarcode(zipcode);
+    let coreResponse = zipcodeTranslateBarcode.zipcodeToBarcode(zipcode);
     // let coreResponse = translate (zipcode);
 
     if (coreResponse.type) {
@@ -49,7 +50,7 @@ function goToBarToZipcodePage() {
 
 //#2.right input & wrong input
 function transformBarToZipcodeCommand(barcode) {
-    let coreResponse = barcodeToZipcode(barcode);
+    let coreResponse = barcodeTranslateZipcode.barcodeToZipcode(barcode);
     if (coreResponse.type) {
         return {
             text: coreResponse.zipcode,
@@ -83,3 +84,12 @@ function otherInput() {
         reset: true
     };
 }
+module.exports = {
+    mainCommand,
+    goToZipToBarcodePage,
+    transformZipToBarcodeCommand,
+    goToBarToZipcodePage,
+    transformBarToZipcodeCommand,
+    quite,
+    otherInput
+};
