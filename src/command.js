@@ -2,18 +2,20 @@ let zipcodeTranslateBarcode = require('./zipcode-barcode');
 let barcodeTranslateZipcode = require('./barcode-zipcode');
 //mainCommand
 function mainCommand() {
-    return `
+    return {
+        text: `
 1. Translate zip code to bar code
 2. Translate ar code to zip code
 3. Quitb
-Please input your choices(1~3)`;
+Please input your choices(1~3)`
+    };
 }
 
 //#1.goToZipToBarcodePage
 function goToZipToBarcodePage() {
     return {
         text: `Please input zip code:`,
-        newMapping: {'*':transformZipToBarcodeCommand}
+        newMapping: {'*': transformZipToBarcodeCommand}
     };
 }
 
@@ -29,7 +31,7 @@ function transformZipToBarcodeCommand(zipcode) {
         };
     } else {
         return {
-            text: 'Please give right input',
+            text: 'Please give right input:\n',
             next: goToZipToBarcodePage,
         }
     }
@@ -39,7 +41,7 @@ function transformZipToBarcodeCommand(zipcode) {
 function goToBarToZipcodePage() {
     return {
         text: `Please input bar code:`,
-        newMapping: {'*':transformZipToBarcodeCommand}
+        newMapping: {'*': transformBarToZipcodeCommand}
     };
 
 }
@@ -54,7 +56,7 @@ function transformBarToZipcodeCommand(barcode) {
         };
     } else {
         return {
-            text: 'Please give right input',
+            text: 'Please give right input:\n',
             next: goToBarToZipcodePage,
             reset: true
         };
@@ -64,7 +66,7 @@ function transformBarToZipcodeCommand(barcode) {
 //#3.quite
 function quite() {
     return {
-        text: 'Thanks for using.',
+        text: 'Thanks for using',
         reset: true
     };
 }
@@ -73,7 +75,7 @@ function quite() {
 //other input
 function otherInput() {
     return {
-        text: 'Please give right input',
+        text: 'Please give right input:\n',
         next: mainCommand,
         reset: true
     };
