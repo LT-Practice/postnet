@@ -57,8 +57,8 @@ function transformBarToZipcodeCommand(barcode) {
     } else {
         return {
             text: 'Please give right input:\n',
-            next: goToBarToZipcodePage,
-            reset: true
+            next: goToBarToZipcodePage
+            // reset: true
         };
     }
 }

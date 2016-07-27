@@ -67,8 +67,8 @@ Please input your choices(1~3)`
         let result = command.transformBarToZipcodeCommand(barcode);
         let expected = {
             text: 'Please give right input:\n',
-            next: command.goToBarToZipcodePage,
-            reset: true
+            next: command.goToBarToZipcodePage
+            // reset: true
         };
         expect(result).toEqual(expected);
     });
