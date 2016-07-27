@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be768332-6e95-42a9-821f-15eb279889a0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/Command-class-spec.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Command-class.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/Route-class-spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Route-class.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/BarcodeTranslater-class-spec.js" afterPath="$PROJECT_DIR$/spec/BarcodeTranslater-class-spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/ZipcodeTranslater-class-spec.js" afterPath="$PROJECT_DIR$/spec/ZipcodeTranslater-class-spec.js" />
     </list>
     <ignored path="postnet.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,31 +34,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BarcodeTranslater-class-spec.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/BarcodeTranslater-class-spec.js">
+      <file leaf-file-name="route-spec.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/route-spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
+            <state relative-caret-position="723">
+              <caret line="71" column="7" selection-start-line="33" selection-start-column="4" selection-end-line="71" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BarcodeTranslater-class.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BarcodeTranslater-class.js">
+      <file leaf-file-name="Route-class.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Route-class.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-189">
+              <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Route-class-spec.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/Route-class-spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-721">
+              <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="route.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/route.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="76">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Command-class.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Command-class.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -79,8 +87,8 @@
       <file leaf-file-name="command-spec.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/command-spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
-              <caret line="90" column="7" selection-start-line="75" selection-start-column="4" selection-end-line="90" selection-end-column="7" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -140,6 +148,9 @@
         <option value="$PROJECT_DIR$/spec/command-spec.js" />
         <option value="$PROJECT_DIR$/spec/Command-class-spec.js" />
         <option value="$PROJECT_DIR$/src/Command-class.js" />
+        <option value="$PROJECT_DIR$/src/route-class.js" />
+        <option value="$PROJECT_DIR$/spec/Route-class-spec.js" />
+        <option value="$PROJECT_DIR$/src/Route-class.js" />
       </list>
     </option>
   </component>
@@ -363,7 +374,7 @@
       <workItem from="1469511966137" duration="629000" />
       <workItem from="1469512799316" duration="2070000" />
       <workItem from="1469522591622" duration="14126000" />
-      <workItem from="1469611035074" duration="24804000" />
+      <workItem from="1469611035074" duration="27347000" />
     </task>
     <task id="LOCAL-00001" summary="without #2 &amp;  #6 spec">
       <created>1469476713350</created>
@@ -414,11 +425,18 @@
       <option name="project" value="LOCAL" />
       <updated>1469609687060</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="command-class-spec&amp;command-class">
+      <created>1469645565038</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1469645565038</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65289000" />
+    <option name="totallyTimeSpent" value="67832000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="39" y="23" width="1398" height="877" extended-state="0" />
@@ -461,7 +479,8 @@
     <MESSAGE value="command" />
     <MESSAGE value="update command-spec &amp; command" />
     <MESSAGE value="all" />
-    <option name="LAST_COMMIT_MESSAGE" value="all" />
+    <MESSAGE value="command-class-spec&amp;command-class" />
+    <option name="LAST_COMMIT_MESSAGE" value="command-class-spec&amp;command-class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -473,22 +492,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/command.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1577">
-          <caret line="83" column="6" selection-start-line="83" selection-start-column="6" selection-end-line="83" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/barcode-zipcode-spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="7" selection-start-line="12" selection-start-column="4" selection-end-line="20" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/barcode-zipcode.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -739,14 +742,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run-spec.js" />
-    <entry file="file://$PROJECT_DIR$/src/route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/zipcode-barcode.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -783,14 +778,6 @@
             <element signature="n#!!block;n#checkBarcodeFormat#0;n#DigitalTranslator#0" expanded="false" />
             <element signature="n#!!block;n#tanslateBarcode#0;n#DigitalTranslator#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/route-spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -834,22 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/zipcode-barcode-spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BarcodeTranslater-class.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ZipcodeTranslater-class.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -858,10 +829,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/spec/zipcode-barcode-spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spec/command-spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="90" column="7" selection-start-line="75" selection-start-column="4" selection-end-line="90" selection-end-column="7" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Command-class.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1710">
+          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BarcodeTranslater-class.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-854">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -874,10 +877,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Command-class.js">
+    <entry file="file://$PROJECT_DIR$/spec/route-spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+        <state relative-caret-position="723">
+          <caret line="71" column="7" selection-start-line="33" selection-start-column="4" selection-end-line="71" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/Route-class-spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-721">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Route-class.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding />
         </state>
       </provider>
