@@ -1,13 +1,22 @@
 let Route = require('../src/Route-class.js');
 // let route = new Route();
 describe('Route-class-spec', () => {
+//     it('#1.start', () => {
+//         let route = new Route();
+//         let response = route.execute('main');
+//         let expected = `
+// 1. Translate zip code to bar code
+// 2. Translate ar code to zip code
+// 3. Quitb
+// Please input your choices(1~3)`;
+//         expect(response).toEqual(expected)
+//     });
     it('#1.start', () => {
-        let route = new Route();
-        let response = route.execute('main');
+        let response = Route('main');
         let expected = `
 1. Translate zip code to bar code
-2. Translate ar code to zip code
-3. Quitb
+2. Translate bar code to zip code
+3. Quit
 Please input your choices(1~3)`;
         expect(response).toEqual(expected)
     });
