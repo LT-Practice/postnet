@@ -1,10 +1,9 @@
 var allCodes = require('./codes');
 let _ = require('lodash');
-let  CoreResponse = require('./CoreResponse');
+let CoreResponse = require('./CoreResponse');
 
 
-
-    class BarcodeTranslater {
+class BarcodeTranslater {
     constructor() {
     }
 
@@ -18,11 +17,7 @@ let  CoreResponse = require('./CoreResponse');
         let zipcodeArray = this.barcodeTransformToZipcode(checkedBarcode);
         let recheckedZipcodeArray = this.recheckZipcodeArray(zipcodeArray);
         let zipcode = this.buildZipcode(recheckedZipcodeArray);
-        /* return {zipcode, type: checkedBarcode.type};*/
-        // console.log(zipcode);
-        // console.log(checkedBarcode);
-        // console.log(new CoreResponse(zipcode,recheckedZipcodeArray.recheckType));
-        return new CoreResponse(zipcode,recheckedZipcodeArray.recheckType);
+        return new CoreResponse(zipcode, recheckedZipcodeArray.recheckType);
     }
 
 //#1

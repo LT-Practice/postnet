@@ -4,12 +4,7 @@ class QuiteCommand {
     }
 
     execute() {
-        // return {
-        //     text: 'Thanks for using',
-        //     next: false,
-        //     reset: true,
-        //     newMapping: null
-        // };
+
         let text = 'Thanks for using';
         let next = false;
         let reset = true;

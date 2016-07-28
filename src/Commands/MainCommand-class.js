@@ -12,13 +12,11 @@ class MainCommand {
 2. Translate bar code to zip code
 3. Quit
 Please input your choices(1~3)`;
-        // return {
-        //     text,
-        //     next: false,
-        //     reset: false,
-        //     newMapping: null
-        // };
-        return new CommandResponse(text, false, false, null);
+
+        let next = false;
+        let reset = false;
+        let newMapping = null;
+        return new CommandResponse(text, next, reset, null);
 
     }
 

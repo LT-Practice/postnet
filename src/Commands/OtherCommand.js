@@ -9,22 +9,14 @@ class OtherCommand {
 
     execute() {
         let mainCommand = new MainCommand();
-        let text= 'Please give right input:\n';
-        let next= mainCommand.execute();
+        let text = 'Please give right input:\n';
+        let next = mainCommand.execute();
+        let reset = true;
+        let newMapping = null;
 
-        // return {
-        //     text: 'Please give right input:\n',
-        //     next: mainCommand.execute(),
-        //     reset: true,
-        //     newMapping:null
-        // };
-        return new CommandResponse(text, next, true, null);
+        return new CommandResponse(text, next, reset, newMapping);
+
     }
 }
 
 module.exports = OtherCommand;
-
-
-// Expected Object({ text: 'Please input zip code:', next: false, reset: false, newMapping: Object({ *: TransformZipToBarcodeCommand({ next: Function }) }) })
-// to equal Object({ text: 'Please input zip code:', next: false, reset: false, newMapping: Object({ *: TransformZipToBarcodeCommand({ next: undefined }) }) }).
-    // Stack:

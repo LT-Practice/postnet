@@ -1,6 +1,6 @@
 var allCodes = require('./codes');
 let _ = require('lodash');
-let  CoreResponse = require('./CoreResponse');
+let CoreResponse = require('./CoreResponse');
 
 
 class ZipcodeTranslater {
@@ -13,19 +13,15 @@ class ZipcodeTranslater {
     }
 
 //#zipcode to barcode 邮编 to 条码
-
     zipcodeToBarcode(zipcode) {
         let checkedZipcode = this.checkZipcode(zipcode);
         let barcodeArray = this.zipcodeTransformToBarcode(checkedZipcode);
         let barcode = this.buildBarcode(barcodeArray);
-        // return {barcode, type: checkedZipcode.type};
-        // console.log(new CoreResponse(zipcode,checkedZipcode.type));
-        return new CoreResponse(barcode,checkedZipcode.type);
+        return new CoreResponse(barcode, checkedZipcode.type);
     }
 
 //#5
     checkZipcode(zipcode) {
-        //debugger;
         let formatCode = zipcode.replace(/-/g, '');
         if (formatCode.length === 5 || formatCode.length === 9) {
             return {zipcode, type: true};
@@ -36,11 +32,9 @@ class ZipcodeTranslater {
 
 //#6
     zipcodeTransformToBarcode(checkedZipcode) {
-        // debugger;
         let formattedZipcode = this.formatZipcode(checkedZipcode);
         let zipcodeArray = this.buildZipcodeArray(formattedZipcode);
         let zipcodeArrayWithCheckDigit = this.addCheckDigit(zipcodeArray);
-        // let allCodes = loadAllCodes();
         let barcodeArray = this.matchBarcode(zipcodeArrayWithCheckDigit, allCodes());
         return barcodeArray;
     }
@@ -67,17 +61,14 @@ class ZipcodeTranslater {
 
 //#6-4
     matchBarcode(zipcodeArrayWithCheckDigit, allCodes) {
-        // debugger;
         return zipcodeArrayWithCheckDigit.map(zipcodeItem => allCodes.find(code =>code.key === zipcodeItem).digit);
     }
 
 //#7
     buildBarcode(barcodeArray) {
-        //debugger;
         return '|' + _.sum(barcodeArray) + '|';
 
     }
-
 
 }
 

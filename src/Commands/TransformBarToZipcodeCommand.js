@@ -1,4 +1,6 @@
 let BarcodeTranslater = require('../BarcodeTranslater-class.js');
+let CommandResponse = require('../CommandResponse.js');
+
 class TransformBarToZipcodeCommand {
     constructor(next) {
         this.next = next;
@@ -8,29 +10,28 @@ class TransformBarToZipcodeCommand {
         let barcodeTranslater = new BarcodeTranslater();
         let coreResponse = barcodeTranslater.barcodeToZipcode(barcode);
         if (coreResponse.type) {
-            return {
-                text: coreResponse._result,
-                next:false,
-                reset: true,
-                newMapping:null
-            };
+            let text = coreResponse._result;
+            let next = false;
+            let reset = true;
+            let newMapping = null;
+
+            return new CommandResponse(text, next, reset, newMapping);
+
         } else {
-            return {
-                text: 'Please give right input:\n',
-                next: this.next,
-                reset: false,
-                newMapping:null
-            };
+            // return {
+            //     text: 'Please give right input:\n',
+            //     next: this.next,
+            //     reset: false,
+            //     newMapping:null
+            // };
+            let text ='Please give right input:\n';
+            let next = this.next;
+            let reset = false;
+            let newMapping = null;
+            return new CommandResponse(text, next, reset, newMapping);
+
         }
     }
 }
 
-module.exports = TransformBarToZipcodeCommand
-// { text: 'Please input bar code:',
-//     next: false,
-//     reset: false,
-//     newMapping: { '*': TransformBarToZipcodeCommand { next: GoToBarToZipcodePageCommand {} } } }
-// { text: 'Please input bar code:',
-//     next: false,
-//     reset: false,
-//     newMapping: { '*': TransformZipToBarcodeCommand { next: GoToBarToZipcodePageCommand {} } } }
+module.exports = TransformBarToZipcodeCommand;
