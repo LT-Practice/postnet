@@ -29,6 +29,3 @@ class TransformZipToBarcodeCommand {
 }
 
 module.exports = TransformZipToBarcodeCommand;
-
-// Expected Object({ text: 'Please input zip code:', next: false, reset: false, newMapping: Object({ *: TransformZipToBarcodeCommand({ next: Function }) }) })
-// to equal Object({ text: 'Please input zip code:', next: false, reset: false, newMapping: Object({ *: TransformZipToBarcodeCommand({ next: Object({ text: 'Please input zip code:', next: false, reset: false, newMapping: Object({ *: TransformZipToBarcodeCommand({ next: Function }) }) }) }) }) }).

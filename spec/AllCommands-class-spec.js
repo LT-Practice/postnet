@@ -32,17 +32,25 @@ Please input your choices(1~3)`,
 
     it('#1.goToZipToBarcodePageCommand', () => {
         let goToZipToBarcodePageCommand = new GoToZipToBarcodePageCommand();
-        let expected = {
-            text: 'Please input zip code:',
-            next: false,
-            reset: false,
-            // newMapping: {'*': goToZipToBarcodePageCommand.transformZipToBarcodeCommand}
-            // newMapping: {'*': goToZipToBarcodePageCommand.transformZipToBarcodeCommand}
-            // newMapping: {'*':new TransformZipToBarcodeCommand(goToZipToBarcodePageCommand.execute())}
-
-            newMapping: {'*':new TransformZipToBarcodeCommand(goToZipToBarcodePageCommand)}
-        };
+        // let expected = {
+        //     text: 'Please input zip code:',
+        //     next: false,
+        //     reset: false,
+        //     // newMapping: {'*': goToZipToBarcodePageCommand.transformZipToBarcodeCommand}
+        //     // newMapping: {'*': goToZipToBarcodePageCommand.transformZipToBarcodeCommand}
+        //     // newMapping: {'*':new TransformZipToBarcodeCommand(goToZipToBarcodePageCommand.execute())}
+        //
+        //     newMapping: {'*': new TransformZipToBarcodeCommand(goToZipToBarcodePageCommand)}
+        // };
         // console.log(expected);
+        let text = 'Please input zip code:';
+        let next = false;
+        let reset = false;
+
+        let newMapping = {'*': new TransformZipToBarcodeCommand(goToZipToBarcodePageCommand)};
+
+        let expected = new CommandResponse(text, next, reset, newMapping);
+
         expect(goToZipToBarcodePageCommand.execute()).toEqual(expected);
     });
 
@@ -74,18 +82,23 @@ Please input your choices(1~3)`,
 
     it('#2.goToBarToZipcodePage', () => {
         let goToBarToZipcodePageCommand = new GoToBarToZipcodePageCommand();
-        let expected = {
-            text: 'Please input bar code:',
-            next: false,
-            reset: false,
-            // newMapping: {'*': goToBarToZipcodePageCommand.transformBarToZipcodeCommand}
+        // let expected = {
+        //     text: 'Please input bar code:',
+        //     next: false,
+        //     reset: false,
+        //     // newMapping: {'*': goToBarToZipcodePageCommand.transformBarToZipcodeCommand}
+        //
+        //     newMapping: {'*':new TransformBarToZipcodeCommand(goToBarToZipcodePageCommand)}
+        //
+        // };
+        let text = 'Please input bar code:';
+        let newMapping = {'*': new TransformBarToZipcodeCommand(goToBarToZipcodePageCommand)};
+        let expected = new CommandResponse(text, false, false, newMapping);
 
-            newMapping: {'*':new TransformBarToZipcodeCommand(goToBarToZipcodePageCommand)}
-
-        };
         // console.log(goToBarToZipcodePageCommand.execute());
         // console.log(expected);
         expect(goToBarToZipcodePageCommand.execute()).toEqual(expected);
+
     });
 
     it('#2.right input', () => {
@@ -117,13 +130,21 @@ Please input your choices(1~3)`,
 
     it('#3.quite', () => {
         let quiteCommand = new QuiteCommand();
-        let expected = {
-            text: 'Thanks for using',
-            next: false,
-            reset: true,
-            newMapping: null
-        };
+        // let expected = {
+        //     text: 'Thanks for using',
+        //     next: false,
+        //     reset: true,
+        //     newMapping: null
+        // };
+        let text =  'Thanks for using';
+        let next = false;
+        let reset = true;
+        let newMapping = null;
+        let expected = new CommandResponse(text, next, reset, newMapping);
+
+
         expect(quiteCommand.execute()).toEqual(expected);
+
     });
 
     it('#other input', () => {
@@ -140,7 +161,7 @@ Please input your choices(1~3)`,
 
         let text = 'Please give right input:\n';
         let next = mainCommand.execute();
-        let reset =true;
+        let reset = true;
         let expected = new CommandResponse(text, next, reset, null);
         expect(otherCommand.execute()).toEqual(expected);
     });
