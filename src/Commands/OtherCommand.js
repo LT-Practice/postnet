@@ -1,4 +1,4 @@
-let MainCommand = require('./MainCommand-class');
+let MainCommand = require('./MainCommand');
 let CommandResponse = require('../CommandResponse.js');
 
 

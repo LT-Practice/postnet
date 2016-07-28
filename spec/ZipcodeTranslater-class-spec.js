@@ -1,4 +1,4 @@
-let ZipcodeTranslater = require('../src/ZipcodeTranslater-class.js');
+let ZipcodeTranslater = require('../src/ZipcodeTranslater.js');
 // var allCodes = require('../src/codes');
 let  CoreResponse = require('../src/CoreResponse');
 

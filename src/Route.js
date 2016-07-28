@@ -1,5 +1,5 @@
-const MainCommand = require("./Commands/MainCommand-class");
-const GoToZipToBarcodePageCommand = require('./Commands/GoToZipToBarcodePageCommand-class');
+const MainCommand = require("./Commands/MainCommand");
+const GoToZipToBarcodePageCommand = require('./Commands/GoToZipToBarcodePageCommand');
 const GoToBarToZipcodePageCommand = require('./Commands/GoToBarToZipcodePageCommand');
 const QuiteCommand = require('./Commands/QuiteCommand');
 

@@ -1,5 +1,5 @@
-let MainCommand = require('../src/Commands/MainCommand-class.js');
-let GoToZipToBarcodePageCommand = require('../src/Commands/GoToZipToBarcodePageCommand-class.js');
+let MainCommand = require('../src/Commands/MainCommand.js');
+let GoToZipToBarcodePageCommand = require('../src/Commands/GoToZipToBarcodePageCommand.js');
 let TransformZipToBarcodeCommand = require('../src/Commands/TransformZipToBarcodeCommand.js');
 let GoToBarToZipcodePageCommand = require('../src/Commands/GoToBarToZipcodePageCommand.js');
 let TransformBarToZipcodeCommand = require('../src/Commands/TransformBarToZipcodeCommand.js');

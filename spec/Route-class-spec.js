@@ -1,4 +1,4 @@
-let Route = require('../src/Route-class.js');
+let Route = require('../src/Route.js');
 describe('Route-class-spec', () => {
 
     it('#1.start', () => {

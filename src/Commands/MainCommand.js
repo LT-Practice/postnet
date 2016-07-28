@@ -1,7 +1,7 @@
-let ZipcodeTranslater = require('../ZipcodeTranslater-class.js');
+let ZipcodeTranslater = require('../ZipcodeTranslater.js');
 let CommandResponse = require('../CommandResponse.js');
 
-// let BarcodeTranslater = require('../BarcodeTranslater-class.js');
+// let BarcodeTranslater = require('../BarcodeTranslater.js');
 class MainCommand {
     constructor() {
     }

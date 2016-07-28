@@ -1,4 +1,4 @@
-let BarcodeTranslater = require('../BarcodeTranslater-class.js');
+let BarcodeTranslater = require('../BarcodeTranslater.js');
 let CommandResponse = require('../CommandResponse.js');
 
 class TransformBarToZipcodeCommand {

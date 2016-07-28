@@ -1,4 +1,4 @@
-let BarcodeTranslater = require('../src/BarcodeTranslater-class.js');
+let BarcodeTranslater = require('../src/BarcodeTranslater.js');
 let  CoreResponse = require('../src/CoreResponse');
 // var allCodes = require('../src/codes');
 let barcodeTranslater = new BarcodeTranslater();
