@@ -3,7 +3,7 @@ let  CoreResponse = require('../src/CoreResponse');
 // var allCodes = require('../src/codes');
 let barcodeTranslater = new BarcodeTranslater();
 
-xdescribe('BarcodeTranslater-class-spec', () => {
+describe('BarcodeTranslater-class-spec', () => {
     it('execute', () => {
         let barcode = '|:::||::|:|::||::|::|:|:|::|:|:|';
         // let zipcode = barcodeToZipcode.barcodeToZipcode(barcode);

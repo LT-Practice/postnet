@@ -7,7 +7,7 @@ let QuiteCommand = require('../src/Commands/QuiteCommand.js');
 let OtherCommand = require('../src/Commands/OtherCommand.js');
 let CommandResponse = require('../src/CommandResponse.js');
 
-xdescribe('AllCommands-class-spec', () => {
+describe('AllCommands-class-spec', () => {
     it('mainCommand', () => {
         let mainCommand = new MainCommand();
         let text = `
@@ -42,7 +42,7 @@ Please input your choices(1~3)`,
 
             newMapping: {'*':new TransformZipToBarcodeCommand(goToZipToBarcodePageCommand)}
         };
-        console.log(expected);
+        // console.log(expected);
         expect(goToZipToBarcodePageCommand.execute()).toEqual(expected);
     });
 
@@ -78,8 +78,13 @@ Please input your choices(1~3)`,
             text: 'Please input bar code:',
             next: false,
             reset: false,
-            newMapping: {'*': goToBarToZipcodePageCommand.transformBarToZipcodeCommand}
+            // newMapping: {'*': goToBarToZipcodePageCommand.transformBarToZipcodeCommand}
+
+            newMapping: {'*':new TransformBarToZipcodeCommand(goToBarToZipcodePageCommand)}
+
         };
+        // console.log(goToBarToZipcodePageCommand.execute());
+        // console.log(expected);
         expect(goToBarToZipcodePageCommand.execute()).toEqual(expected);
     });
 
