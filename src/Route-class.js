@@ -1,6 +1,7 @@
-let commands = require('../src/command');
-// let commands = new Command();
-
+let Command = require('../src/Command-class.js');
+// let commands = require('../src/Command.js');
+// let Command = require('../src/Command-class.js');
+let commands = new Command();
 class Route {
     constructor() {
         this.mapping = {
@@ -45,6 +46,7 @@ class Route {
         // if (response.reset) {
         //     route.reset();
         // }
+
 
         return result;
     }
