@@ -12,7 +12,9 @@ describe('Route-class-spec', () => {
 //         expect(response).toEqual(expected)
 //     });
     it('#1.start', () => {
-        let response = Route('main');
+        let route = new Route();
+
+        let response = route.execute('main');
         let expected = `
 1. Translate zip code to bar code
 2. Translate bar code to zip code
@@ -20,6 +22,12 @@ describe('Route-class-spec', () => {
 Please input your choices(1~3)`;
         expect(response).toEqual(expected)
     });
+
+    // it('#2.input 1 goToZipToBarcodePage', () => {
+    //     let response = Route('1');
+    //     let expected = `Please input zip code:`;
+    //     expect(response).toEqual(expected);
+    // });
     //
     // it('#2.input 1 goToZipToBarcodePage', () => {
     //     let route = new Route();

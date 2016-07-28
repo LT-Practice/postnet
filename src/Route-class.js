@@ -1,65 +1,67 @@
-let commands = require('./command');
+// let commands = require('../src/command');
 const MainCommand = require("./Commands/MainCommand-class");
-const goToZipToBarcodePage = require("./Commands/GoToZipToBarcodePageCommand-class");
+// let commands = new Command();
 
-let mapping = {
-    '1': goToZipToBarcodePage.goToZipToBarcodePage,
-    '2': commands.goToBarToZipcodePage,
-    '3': commands.quite,
-    'main': new MainCommand()
-};
-function executeCommand(command, input) {
-    if (command.execute) {
-        return command.execute(input);
-    } else {
-        return command(input);
+class Route {
+    constructor() {
+        this.mapping = {
+            // '1': commands.goToZipToBarcodePage,
+            // '2': commands.goToBarToZipcodePage,
+            // '3': commands.quite,
+            'main': new MainCommand()
+        };
+
     }
+
+
+    execute(input) {
+        let command = this.mapping[input];
+        let result = '';
+        let response = '';
+        if (command.execute()) {
+            response = command.execute(input);
+            result += response.text;
+        } else if (this.mapping['*']) {
+            response = this.mapping['*'](input);
+            result += response.text;
+        } else {
+            return 'no command Please give right input:';
+        }
+
+
+        // if (response.next) {
+        //     let newResponse = '';
+        //     do {
+        //         newResponse = response.next(input);
+        //         result += newResponse.text;
+        //
+        //     } while (newResponse.next);
+        //
+        //
+        // }
+        // if (response.newMapping) {
+        //     this.mapping = response.newMapping;
+        // }
+
+        // if (response.reset) {
+        //     route.reset();
+        // }
+
+        return result;
+    }
+
+    //
+    // route
+    //
+    // reset = function () {
+    //     mapping = {
+    //         '1': commands.goToZipToBarcodePage,
+    //         '2': commands.goToBarToZipcodePage,
+    //         '3': commands.quite,
+    //         'main': commands.mainCommand
+    //     };
+    // };
+
 }
-function route(input) {
-    let command = mapping[input];
-    let result = '';
-    let response = '';
-    if (command) {
-        response = executeCommand(command, input);
-        result += response.text;
-    } else if (mapping['*']) {
-        command = mapping['*'];
-        response = executeCommand(command, input);
-        result += response.text;
-    } else {
-        return 'no command Please give right input:';
-    }
 
-
-    if (response.next) {
-        let newResponse = '';
-        do {
-            newResponse = response.next(input);
-            result += newResponse.text;
-
-        } while (newResponse.next);
-
-
-    }
-    if (response.newMapping) {
-        mapping = response.newMapping;
-    }
-
-    if (response.reset) {
-        route.reset();
-    }
-
-    return result;
-}
-
-
-route.reset = function () {
-    mapping = {
-        '1': goToZipToBarcodePage.goToZipToBarcodePage,
-        '2': commands.goToBarToZipcodePage,
-        '3': commands.quite,
-        'main': new MainCommand()
-    };
-};
-
-module.exports = route;
+module.exports = Route;
