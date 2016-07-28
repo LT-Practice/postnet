@@ -1,5 +1,6 @@
 let MainCommand = require('../src/Commands/MainCommand-class.js');
 let GoToZipToBarcodePageCommand = require('../src/Commands/GoToZipToBarcodePageCommand-class.js');
+let TransformZipToBarcodeCommand = require('../src/Commands/TransformZipToBarcodeCommand.js');
 
 describe('AllCommands-class-spec', () => {
     it('mainCommand', () => {
@@ -22,6 +23,17 @@ Please input your choices(1~3)`
             newMapping: {'*': goToZipToBarcodePageCommand.transformZipToBarcodeCommand}
         };
         expect(goToZipToBarcodePageCommand.execute()).toEqual(expected);
+    });
+
+    it('#1.right input', () => {
+        let transformZipToBarcodeCommand = new TransformZipToBarcodeCommand();
+        let zipcode = '12345';
+        let result = transformZipToBarcodeCommand.execute(zipcode);
+        let expected = {
+            text: '|:::||::|:|::||::|::|:|:|::|:|:|',
+            reset: true
+        };
+        expect(result).toEqual(expected);
     });
 
 

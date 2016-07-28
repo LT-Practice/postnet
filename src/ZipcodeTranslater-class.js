@@ -19,7 +19,8 @@ class ZipcodeTranslater {
         let barcodeArray = this.zipcodeTransformToBarcode(checkedZipcode);
         let barcode = this.buildBarcode(barcodeArray);
         // return {barcode, type: checkedZipcode.type};
-        return new CoreResponse(zipcode,checkedZipcode.type);
+        // console.log(new CoreResponse(zipcode,checkedZipcode.type));
+        return new CoreResponse(barcode,checkedZipcode.type);
     }
 
 //#5

@@ -13,7 +13,7 @@ describe('ZipcodeTranslater-class-spec', () => {
         //     barcode: '|:::||::|:|::||::|::|:|:|::|:|:|',
         //     type: true
         // };
-        let expected = new CoreResponse('12345',true)
+        let expected = new CoreResponse('|:::||::|:|::||::|::|:|:|::|:|:|',true)
         expect(transtlater.execute(zipcode)).toEqual(expected);
     });
 
