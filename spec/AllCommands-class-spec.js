@@ -5,21 +5,28 @@ let GoToBarToZipcodePageCommand = require('../src/Commands/GoToBarToZipcodePageC
 let TransformBarToZipcodeCommand = require('../src/Commands/TransformBarToZipcodeCommand.js');
 let QuiteCommand = require('../src/Commands/QuiteCommand.js');
 let OtherCommand = require('../src/Commands/OtherCommand.js');
+let CommandResponse = require('../src/CommandResponse.js');
 
 describe('AllCommands-class-spec', () => {
     it('mainCommand', () => {
         let mainCommand = new MainCommand();
-
-        let expected = {
-            text: `
+        let text = `
 1. Translate zip code to bar code
-2. Translate ar code to zip code
-3. Quitb
+2. Translate bar code to zip code
+3. Quit
 Please input your choices(1~3)`,
-            next: false,
-            reset: false,
-            newMapping: null
-        };
+//
+//         let expected = {
+//             text: `
+// 1. Translate zip code to bar code
+// 2. Translate bar code to zip code
+// 3. Quit
+// Please input your choices(1~3)`,
+//             next: false,
+//             reset: false,
+//             newMapping: null
+//         };
+            expected = new CommandResponse(text, false, false, null);
         expect(mainCommand.execute()).toEqual(expected);
     });
 
@@ -27,8 +34,8 @@ Please input your choices(1~3)`,
         let goToZipToBarcodePageCommand = new GoToZipToBarcodePageCommand();
         let expected = {
             text: 'Please input zip code:',
-            next:false,
-            reset:false,
+            next: false,
+            reset: false,
             newMapping: {'*': goToZipToBarcodePageCommand.transformZipToBarcodeCommand}
         };
         expect(goToZipToBarcodePageCommand.execute()).toEqual(expected);
@@ -40,9 +47,9 @@ Please input your choices(1~3)`,
         let result = transformZipToBarcodeCommand.execute(zipcode);
         let expected = {
             text: '|:::||::|:|::||::|::|:|:|::|:|:|',
-            next:false,
+            next: false,
             reset: true,
-            newMapping:null
+            newMapping: null
         };
         expect(result).toEqual(expected);
     });
@@ -53,8 +60,8 @@ Please input your choices(1~3)`,
         let expected = {
             text: 'Please give right input:\n',
             next: transformZipToBarcodeCommand.goToZipToBarcodePage,
-            reset:false,
-            newMapping:null
+            reset: false,
+            newMapping: null
         };
         expect(result).toEqual(expected);
     });
@@ -64,8 +71,8 @@ Please input your choices(1~3)`,
         let goToBarToZipcodePageCommand = new GoToBarToZipcodePageCommand();
         let expected = {
             text: 'Please input bar code:',
-            next:false,
-            reset:false,
+            next: false,
+            reset: false,
             newMapping: {'*': goToBarToZipcodePageCommand.transformBarToZipcodeCommand}
         };
         expect(goToBarToZipcodePageCommand.execute()).toEqual(expected);
@@ -77,9 +84,9 @@ Please input your choices(1~3)`,
         let result = transformBarToZipcodeCommand.execute(barcode);
         let expected = {
             text: '12345',
-            next:false,
+            next: false,
             reset: true,
-            newMapping:null
+            newMapping: null
         };
         expect(result).toEqual(expected);
     });
@@ -92,8 +99,9 @@ Please input your choices(1~3)`,
             text: 'Please give right input:\n',
             next: transformBarToZipcodeCommand.goToBarToZipcodePage,
             reset: false,
-            newMapping:null
+            newMapping: null
         };
+        // console.log(expected);
         expect(result).toEqual(expected);
     });
 
@@ -101,9 +109,9 @@ Please input your choices(1~3)`,
         let quiteCommand = new QuiteCommand();
         let expected = {
             text: 'Thanks for using',
-            next:false,
+            next: false,
             reset: true,
-            newMapping:null
+            newMapping: null
         };
         expect(quiteCommand.execute()).toEqual(expected);
     });
@@ -112,12 +120,18 @@ Please input your choices(1~3)`,
         let otherCommand = new OtherCommand();
         let mainCommand = new MainCommand();
 
-        let expected = {
-            text: 'Please give right input:\n',
-            next: mainCommand.execute(),
-            reset: true,
-            newMapping:null
-        };
+        // let expected = {
+        //     text: 'Please give right input:\n',
+        //     next: mainCommand.execute(),
+        //     reset: true,
+        //     newMapping: null
+        // };
+        //
+
+        let text = 'Please give right input:\n';
+        let next = mainCommand.execute();
+        let reset =true;
+        let expected = new CommandResponse(text, next, reset, null);
         expect(otherCommand.execute()).toEqual(expected);
     });
 
