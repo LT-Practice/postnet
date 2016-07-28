@@ -1,5 +1,7 @@
 var allCodes = require('./codes');
 let _ = require('lodash');
+let  CoreResponse = require('./CoreResponse');
+
 
 class ZipcodeTranslater {
     constructor() {
@@ -16,7 +18,8 @@ class ZipcodeTranslater {
         let checkedZipcode = this.checkZipcode(zipcode);
         let barcodeArray = this.zipcodeTransformToBarcode(checkedZipcode);
         let barcode = this.buildBarcode(barcodeArray);
-        return {barcode, type: checkedZipcode.type};
+        // return {barcode, type: checkedZipcode.type};
+        return new CoreResponse(zipcode,checkedZipcode.type);
     }
 
 //#5

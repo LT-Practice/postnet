@@ -1,0 +1,3 @@
+class CommandResponse{
+    constructor(text,){}
+}
