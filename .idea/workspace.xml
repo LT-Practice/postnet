@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be768332-6e95-42a9-821f-15eb279889a0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Commands/TransformBarToZipcodeCommand.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Commands/OtherCommand.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Commands/QuiteCommand.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/AllCommands-class-spec.js" afterPath="$PROJECT_DIR$/spec/AllCommands-class-spec.js" />
     </list>
@@ -27,28 +28,58 @@
       <file leaf-file-name="Command-class.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Command-class.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="68" selection-end-column="5" />
+            <state relative-caret-position="1425">
+              <caret line="75" column="10" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TransformBarToZipcodeCommand.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Commands/TransformBarToZipcodeCommand.js">
+      <file leaf-file-name="MainCommand-class.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Commands/MainCommand-class.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="34" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="34" />
+            <state relative-caret-position="114">
+              <caret line="6" column="11" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AllCommands-class-spec.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AllCommands-class-spec.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spec/AllCommands-class-spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="63" column="58" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="58" />
+            <state relative-caret-position="533">
+              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OtherCommand.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Commands/OtherCommand.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="49" selection-start-line="0" selection-start-column="49" selection-end-line="0" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QuiteCommand.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Commands/QuiteCommand.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TransformBarToZipcodeCommand.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Commands/TransformBarToZipcodeCommand.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -57,8 +88,8 @@
       <file leaf-file-name="Command-class-spec.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/Command-class-spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+            <state relative-caret-position="495">
+              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="88" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -121,8 +152,10 @@
         <option value="$PROJECT_DIR$/src/Commands/TransformZipToBarcodeCommand.js" />
         <option value="$PROJECT_DIR$/src/Commands/GoToBarToZipcodePageCommand.js" />
         <option value="$PROJECT_DIR$/spec/Command-class-spec.js" />
-        <option value="$PROJECT_DIR$/spec/AllCommands-class-spec.js" />
         <option value="$PROJECT_DIR$/src/Commands/TransformBarToZipcodeCommand.js" />
+        <option value="$PROJECT_DIR$/src/Commands/QuiteCommand.js" />
+        <option value="$PROJECT_DIR$/spec/AllCommands-class-spec.js" />
+        <option value="$PROJECT_DIR$/src/Commands/OtherCommand.js" />
       </list>
     </option>
   </component>
@@ -364,7 +397,7 @@
       <workItem from="1469511966137" duration="629000" />
       <workItem from="1469512799316" duration="2070000" />
       <workItem from="1469522591622" duration="14126000" />
-      <workItem from="1469611035074" duration="44841000" />
+      <workItem from="1469611035074" duration="45802000" />
     </task>
     <task id="LOCAL-00001" summary="without #2 &amp;  #6 spec">
       <created>1469476713350</created>
@@ -450,11 +483,18 @@
       <option name="project" value="LOCAL" />
       <updated>1469684721948</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="TransformBarToZipcodeCommand">
+      <created>1469685290219</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1469685290219</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85326000" />
+    <option name="totallyTimeSpent" value="86287000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="39" y="23" width="1398" height="877" extended-state="0" />
@@ -502,7 +542,8 @@
     <MESSAGE value="CoreResponse&amp;MainCommand&amp;GoToZip..Command" />
     <MESSAGE value="TransformZipToBarcodeCommand" />
     <MESSAGE value="GoToBarToZipcodePageCommand" />
-    <option name="LAST_COMMIT_MESSAGE" value="GoToBarToZipcodePageCommand" />
+    <MESSAGE value="TransformBarToZipcodeCommand" />
+    <option name="LAST_COMMIT_MESSAGE" value="TransformBarToZipcodeCommand" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -514,22 +555,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/spec/zipcode-barcode-spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/zipcode-barcode.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/barcode-zipcode.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -835,14 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/MainCommand-class.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ZipcodeTranslater-class.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -883,14 +900,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Command-class.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="68" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/GoToBarToZipcodePageCommand.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -901,24 +910,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/Command-class-spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+        <state relative-caret-position="495">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="88" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/AllCommands-class-spec.js">
+    <entry file="file://$PROJECT_DIR$/src/Command-class.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="63" column="58" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="58" />
+        <state relative-caret-position="1425">
+          <caret line="75" column="10" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/MainCommand-class.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/OtherCommand.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="49" selection-start-line="0" selection-start-column="49" selection-end-line="0" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/QuiteCommand.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/TransformBarToZipcodeCommand.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="34" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="34" />
+        <state relative-caret-position="38">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/AllCommands-class-spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding />
         </state>
       </provider>

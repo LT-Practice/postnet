@@ -3,6 +3,8 @@ let GoToZipToBarcodePageCommand = require('../src/Commands/GoToZipToBarcodePageC
 let TransformZipToBarcodeCommand = require('../src/Commands/TransformZipToBarcodeCommand.js');
 let GoToBarToZipcodePageCommand = require('../src/Commands/GoToBarToZipcodePageCommand.js');
 let TransformBarToZipcodeCommand = require('../src/Commands/TransformBarToZipcodeCommand.js');
+let QuiteCommand = require('../src/Commands/QuiteCommand.js');
+let OtherCommand = require('../src/Commands/OtherCommand.js');
 
 describe('AllCommands-class-spec', () => {
     it('mainCommand', () => {
@@ -69,5 +71,25 @@ Please input your choices(1~3)`
         expect(result).toEqual(expected);
     });
 
+    it('#3.quite', () => {
+        let quiteCommand = new QuiteCommand();
+        let expected = {
+            text: 'Thanks for using',
+            reset: true
+        };
+        expect(quiteCommand.execute()).toEqual(expected);
+    });
+
+    it('#other input', () => {
+        let otherCommand = new OtherCommand();
+        let mainCommand = new MainCommand();
+
+        let expected = {
+            text: 'Please give right input:\n',
+            next: mainCommand.execute(),
+            reset: true
+        };
+        expect(otherCommand.execute()).toEqual(expected);
+    });
 
 });
