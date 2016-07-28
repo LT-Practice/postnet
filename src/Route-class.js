@@ -18,15 +18,16 @@ class Route {
 
 
     execute(input) {
+        // console.log(this.mapping);
         let command = this.mapping[input];
-        // console.log(command);
         let result = '';
         let response = '';
-        if (command.execute(input)) {
+        if (command) {
+            // console.log(123);
             response = command.execute(input);
             result += response.text;
         } else if (this.mapping['*']) {
-            response = this.mapping['*'](input);
+            response = this.mapping['*'].execute(input);
             result += response.text;
         } else {
             return 'no command Please give right input:';
@@ -36,7 +37,7 @@ class Route {
         if (response.next) {
             let newResponse = '';
             do {
-                newResponse = response.next(input);
+                newResponse = response.next.execute(input);
                 result += newResponse.text;
 
             } while (newResponse.next);
@@ -48,7 +49,7 @@ class Route {
         }
 
         if (response.reset) {
-            route.reset();
+            this.reset();
         }
 
         return result;
@@ -57,14 +58,14 @@ class Route {
     //
     // route
 
-    // reset = function () {
-    //     mapping = {
-    //         '1': commands.goToZipToBarcodePage,
-    //         '2': commands.goToBarToZipcodePage,
-    //         '3': commands.quite,
-    //         'main': commands.mainCommand
-    //     };
-    // };
+    reset(){
+        this.mapping = {
+            '1': new GoToZipToBarcodePageCommand(),
+            '2': new GoToBarToZipcodePageCommand(),
+            '3': new QuiteCommand(),
+            'main': new MainCommand()
+        };
+    };
 
 }
 

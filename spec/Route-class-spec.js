@@ -1,5 +1,5 @@
 let Route = require('../src/Route-class.js');
-// let route = new Route();
+let route = new Route();
 describe('Route-class-spec', () => {
 //     it('#1.start', () => {
 //         let route = new Route();
@@ -39,13 +39,13 @@ Please input your choices(1~3)`;
 
 
     //
-    it('#3.input a right zipcode to trnsformZipToBarcodeCommand', () => {
-        let route = new Route();
+    fit('#3.input a right zipcode to trnsformZipToBarcodeCommand', () => {
+        // let route = new Route();
         route.execute('1');
 
         // route.execute('1');
         // console.log(route.execute('1'));
-        // let response = route.execute('12345');
+        let response = route.execute('12345');
         let expected = '|:::||::|:|::||::|::|:|:|::|:|:|';
 
         expect(response).toEqual(expected);
