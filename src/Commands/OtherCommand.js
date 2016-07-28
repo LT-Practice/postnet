@@ -10,7 +10,8 @@ class OtherCommand {
         return {
             text: 'Please give right input:\n',
             next: mainCommand.execute(),
-            reset: true
+            reset: true,
+            newMapping:null
         };
     }
 }

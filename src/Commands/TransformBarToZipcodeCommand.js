@@ -9,13 +9,16 @@ class TransformBarToZipcodeCommand {
         if (coreResponse.type) {
             return {
                 text: coreResponse._result,
-                reset: true
+                next:false,
+                reset: true,
+                newMapping:null
             };
         } else {
             return {
                 text: 'Please give right input:\n',
-                next: BarcodeTranslater.goToBarToZipcodePage
-                // reset: true
+                next: BarcodeTranslater.goToBarToZipcodePage,
+                reset: false,
+                newMapping:null
             };
         }
     }

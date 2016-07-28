@@ -5,7 +5,9 @@ class QuiteCommand {
     execute() {
         return {
             text: 'Thanks for using',
-            reset: true
+            next: false,
+            reset: true,
+            newMapping: null
         };
     }
 

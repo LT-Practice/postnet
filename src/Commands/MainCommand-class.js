@@ -10,7 +10,10 @@ class MainCommand {
 1. Translate zip code to bar code
 2. Translate ar code to zip code
 3. Quitb
-Please input your choices(1~3)`
+Please input your choices(1~3)`,
+            next:false,
+            reset:false,
+            newMapping:null
         };
     }
 

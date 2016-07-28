@@ -10,12 +10,16 @@ class TransformZipToBarcodeCommand {
             if (coreResponse.type) {
                 return {
                     text: coreResponse._result,
-                    reset: true
+                    next:false,
+                    reset: true,
+                    newMapping:null
                 };
             } else {
                 return {
                     text: 'Please give right input:\n',
                     next: this.goToZipToBarcodePage,
+                    reset:false,
+                    newMapping:null
                 }
             }
     }

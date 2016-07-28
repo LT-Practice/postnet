@@ -4,6 +4,8 @@ class GoToZipToBarcodePageCommand{
     execute() {
         return {
             text: `Please input zip code:`,
+            next:false,
+            reset:false,
             newMapping: {'*': ZipcodeTranslater.transformZipToBarcodeCommand}
         };
     }

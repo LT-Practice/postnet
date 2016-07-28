@@ -6,6 +6,8 @@ class GoToBarToZipcodePageCommand {
     execute() {
         return {
             text: `Please input bar code:`,
+            next:false,
+            reset:false,
             newMapping: {'*': BarcodeTranslater.transformBarToZipcodeCommand}
         };
 
