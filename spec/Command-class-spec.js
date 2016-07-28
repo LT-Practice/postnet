@@ -77,7 +77,7 @@ Please input your choices(1~3)`
             reset: true
         };
         expect(command.quite()).toEqual(expected);
-    })
+    });
 
     it('#other input', () => {
         let expected = {
