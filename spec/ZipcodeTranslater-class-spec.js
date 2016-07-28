@@ -5,7 +5,7 @@ let  CoreResponse = require('../src/CoreResponse');
 
 
 let transtlater = new ZipcodeTranslater();
-describe('ZipcodeTranslater-class-spec', () => {
+xdescribe('ZipcodeTranslater-class-spec', () => {
     it('execute', () => {
         let zipcode = '12345';
         // let barcode = zipToBarcode.zipcodeToBarcode(zipcode);
