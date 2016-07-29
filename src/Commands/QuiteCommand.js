@@ -7,7 +7,7 @@ class QuiteCommand {
 
         let text = 'Thanks for using';
         let next = false;
-        let reset = true;
+        let reset = false;
         let newMapping = null;
 
         return new CommandResponse(text, next, reset, newMapping);

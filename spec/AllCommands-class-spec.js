@@ -99,7 +99,7 @@ Please input your choices(1~3)`;
         let quiteCommand = new QuiteCommand();
         let text = 'Thanks for using';
         let next = false;
-        let reset = true;
+        let reset = false;
         let newMapping = null;
         let expected = new CommandResponse(text, next, reset, newMapping);
         expect(quiteCommand.execute()).toEqual(expected);

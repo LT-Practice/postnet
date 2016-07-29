@@ -26,7 +26,12 @@ Please input your choices(1~3)`;
         let route = new Route();
         route.execute('1');
         let response = route.execute('12345');
-        let expected = '|:::||::|:|::||::|::|:|:|::|:|:|';
+        let expected = `|:::||::|:|::||::|::|:|:|::|:|:|\n
+1. Translate zip code to bar code
+2. Translate bar code to zip code
+3. Quit
+Please input your choices(1~3)`;
+
         expect(response).toEqual(expected);
 
 
@@ -52,7 +57,12 @@ Please input your choices(1~3)`;
         let route = new Route();
         route.execute('2');
         let response = route.execute('|:::||::|:|::||::|::|:|:|::|:|:|');
-        let expected = '12345';
+        let expected = '12345\n';
+        expected+= `
+1. Translate zip code to bar code
+2. Translate bar code to zip code
+3. Quit
+Please input your choices(1~3)`
         expect(response).toEqual(expected);
     });
 

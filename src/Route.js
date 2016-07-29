@@ -47,6 +47,8 @@ class Route {
 
         if (response.reset) {
             this.reset();
+            result += `\n`;
+            result += this.mapping['main'].execute()._text;
         }
         return result;
     }
