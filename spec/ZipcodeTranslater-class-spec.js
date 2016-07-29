@@ -12,4 +12,5 @@ describe('ZipcodeTranslater-class-spec', () => {
         expect(transtlater.execute(zipcode)).toEqual(expected);
     });
 
+
 });

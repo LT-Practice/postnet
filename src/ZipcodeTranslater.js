@@ -20,10 +20,40 @@ class ZipcodeTranslater {
         return new CoreResponse(barcode, checkedZipcode.type);
     }
 
-//#5
+// //#5
+//     checkZipcode(zipcode) {
+//
+//         let hyphenPosition = zipcode.length === 10 ? zipcode.includes('-', 5) : true;
+//         let onlyOneHyphen = zipcode.indexOf('-') === zipcode.lastIndexOf('-');
+//
+//         let formatCode = zipcode.replace(/-/g, '');
+//         let temp = parseInt(formatCode).toString();
+//         // let isNumber = (temp.length === formatCode.length) ? true:false;//!isNaN(temp);
+//         formatCode = parseInt(formatCode).toString();
+//
+//         if (formatCode.length === 5 || formatCode.length === 9 && hyphenPosition && onlyOneHyphen) {
+//             return {zipcode, type: true};
+//         } else {
+//             return {zipcode, type: false};
+//         }
+//     }
+    //#5
     checkZipcode(zipcode) {
+
         let formatCode = zipcode.replace(/-/g, '');
-        if (formatCode.length === 5 || formatCode.length === 9) {
+        let hyphenPosition = zipcode.length === 10 ? zipcode.includes('-', 5) : true;
+
+        let onlyOneHyphen = zipcode.indexOf('-') === zipcode.lastIndexOf('-');
+
+        // let temp = parseInt(formatCode).toString();
+        // // let isNumber = (temp.length === formatCode.length) ? true:false;//!isNaN(temp);
+        let format = parseInt(formatCode).toString();
+        if (format.length != formatCode.length) {
+            return {zipcode, type: false};
+
+        }
+
+        if (formatCode.length === 5 || formatCode.length === 9 && hyphenPosition && onlyOneHyphen) {
             return {zipcode, type: true};
         } else {
             return {zipcode, type: false};

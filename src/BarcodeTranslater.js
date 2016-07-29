@@ -18,15 +18,25 @@ class BarcodeTranslater {
         let recheckedZipcodeArray = this.recheckZipcodeArray(zipcodeArray);
         let zipcode = this.buildZipcode(recheckedZipcodeArray);
         return new CoreResponse(zipcode, recheckedZipcodeArray.recheckType);
+        // return new CoreResponse(zipcode, checkedBarcode.type);
     }
 
 //#1
     checkBarcode(barcode) {
+        for (let i = 0; i < barcode.length; i++) {
+            var onlyBarcode = _.isEqual(barcode[i], ':') || _.isEqual(barcode[i], '|');
+            if (onlyBarcode === false) {
+                break;
+            }
+        }
+
+
         let barcodeElementArray = barcode.split('');
         let bar = '|';
+        // let onlyBar = barcodeElementArray.map(element => element === ':');
         let barcodesLength = (barcodeElementArray.length - bar.length * 2) / 5;
         let type = (barcodeElementArray[0] === bar && barcodeElementArray[barcodeElementArray.length - 1]
-        && (barcodesLength === 6 || barcodesLength === 10));
+        && (barcodesLength === 6 || barcodesLength === 10) && onlyBarcode);
         return {barcode, type};
     }
 
