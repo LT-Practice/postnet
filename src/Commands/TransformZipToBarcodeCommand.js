@@ -7,35 +7,27 @@ class TransformZipToBarcodeCommand {
     }
 
     execute(zipcode) {
-            let zipcodeTranslater = new ZipcodeTranslater();
-            // let coreResponse = zipcodeTranslater.zipcodeToBarcode(zipcode);
+        // let zipcodeTranslater = new ZipcodeTranslater();
+        // let coreResponse = new ZipcodeTranslater().zipcodeToBarcode(zipcode);
+        let coreResponse = new ZipcodeTranslater().checkZipcode(zipcode);
+        if (coreResponse.type) {
             let coreResponse = new ZipcodeTranslater().zipcodeToBarcode(zipcode);
-            // let coreResponse = translate (zipcode);
-            if (coreResponse.type) {
-                let text = coreResponse._result;
-                let next = false;
-                let reset = true;
-                let newMapping = null;
+            let text = coreResponse._result;
+            let next = false;
+            let reset = true;
+            let newMapping = null;
 
-                return new CommandResponse(text,next,reset,newMapping);
+            return new CommandResponse(text, next, reset, newMapping);
 
-            } else {
-                // return {
-                //     text: 'Please give right input:\n',
-                //     // next: this.goToZipToBarcodePage,
-                //     next: this.next,
-                //     reset:false,
-                //     newMapping:null
-                //
-
-                let text =  'Please give right input:\n';
-                let next =  this.next;
-                let reset = false;
-                let newMapping = null;
-                return new CommandResponse(text,next,reset,newMapping);
+        } else {
+            let text = 'Please give right input:\n';
+            let next = this.next;
+            let reset = false;
+            let newMapping = null;
+            return new CommandResponse(text, next, reset, newMapping);
 
 
-            }
+        }
     }
 }
 

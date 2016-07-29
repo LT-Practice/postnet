@@ -1,7 +1,6 @@
 let ZipcodeTranslater = require('../ZipcodeTranslater.js');
 let CommandResponse = require('../CommandResponse.js');
 
-// let BarcodeTranslater = require('../BarcodeTranslater.js');
 class MainCommand {
     constructor() {
     }
@@ -16,7 +15,7 @@ Please input your choices(1~3)`;
         let next = false;
         let reset = false;
         let newMapping = null;
-        return new CommandResponse(text, next, reset, null);
+        return new CommandResponse(text, next, reset, newMapping);
 
     }
 

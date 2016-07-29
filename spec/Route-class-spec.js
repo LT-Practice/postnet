@@ -58,7 +58,7 @@ Please input your choices(1~3)`;
         route.execute('2');
         let response = route.execute('|:::||::|:|::||::|::|:|:|::|:|:|');
         let expected = '12345\n';
-        expected+= `
+        expected += `
 1. Translate zip code to bar code
 2. Translate bar code to zip code
 3. Quit

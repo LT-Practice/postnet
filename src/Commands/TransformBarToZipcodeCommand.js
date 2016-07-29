@@ -8,8 +8,11 @@ class TransformBarToZipcodeCommand {
 
     execute(barcode) {
         let barcodeTranslater = new BarcodeTranslater();
-        let coreResponse = barcodeTranslater.barcodeToZipcode(barcode);
+        // let coreResponse = barcodeTranslater.barcodeToZipcode(barcode);
+        let coreResponse = barcodeTranslater.checkBarcode(barcode);
         if (coreResponse.type) {
+            let coreResponse = barcodeTranslater.barcodeToZipcode(barcode);
+
             let text = coreResponse._result;
             let next = false;
             let reset = true;
@@ -18,13 +21,7 @@ class TransformBarToZipcodeCommand {
             return new CommandResponse(text, next, reset, newMapping);
 
         } else {
-            // return {
-            //     text: 'Please give right input:\n',
-            //     next: this.next,
-            //     reset: false,
-            //     newMapping:null
-            // };
-            let text ='Please give right input:\n';
+            let text = 'Please give right input:\n';
             let next = this.next;
             let reset = false;
             let newMapping = null;
