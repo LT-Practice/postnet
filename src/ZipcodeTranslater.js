@@ -41,19 +41,19 @@ class ZipcodeTranslater {
     checkZipcode(zipcode) {
 
         let formatCode = zipcode.replace(/-/g, '');
-        let hyphenPosition = zipcode.length === 10 ? zipcode.includes('-', 5) : true;
-
+        // let hyphenPosition = zipcode.length === 10 ? zipcode.includes('-', 5) : true;
+        let hyphenPosition = zipcode.length >5 ? zipcode.includes('-', 5) : true;
+        // console.log(hyphenPosition);
         let onlyOneHyphen = zipcode.indexOf('-') === zipcode.lastIndexOf('-');
-
-        // let temp = parseInt(formatCode).toString();
-        // // let isNumber = (temp.length === formatCode.length) ? true:false;//!isNaN(temp);
+      
         let format = parseInt(formatCode).toString();
         if (format.length != formatCode.length) {
             return {zipcode, type: false};
 
         }
 
-        if (formatCode.length === 5 || formatCode.length === 9 && hyphenPosition && onlyOneHyphen) {
+        if ((formatCode.length === 5 || formatCode.length === 9)&&(zipcode.length === 5 || zipcode.length === 9||zipcode.length === 10) && hyphenPosition && onlyOneHyphen) {
+            // console.log('123');
             return {zipcode, type: true};
         } else {
             return {zipcode, type: false};
